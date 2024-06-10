@@ -1,7 +1,19 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-from config import BOTADDLOGS
+from config import BOTADDLOGS as BOTADDLOGS
 from AnieXEricaMusic import app
+from AnieXEricaMusic.utils.database import (
+    add_served_chat,
+    add_served_user,
+    blacklisted_chats,
+    get_lang,
+    is_banned_user,
+    is_on_off,
+    delete_served_chat,
+    is_served_chat,
+)
+from pyrogram.enums import MessageEntityType
+from pyrogram.types import Message, User, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
 
 async def new_message(chat_id: int, message: str, reply_markup=None):
@@ -24,7 +36,7 @@ async def on_new_chat_members(client: Client, message: Message):
     ]
 ])
 
-        
+        await add_served_chat(chat_id)
         await new_message(BOTADDLOGS, am, reply_markup)
 
 @app.on_message(filters.left_chat_member)
@@ -44,5 +56,5 @@ async def on_left_chat_member(client: Client, message: Message):
     ]
 ])
 
-        
+        await delete_served_chat(chat_id)
         await new_message(BOTADDLOGS, ambye, reply_markup)
