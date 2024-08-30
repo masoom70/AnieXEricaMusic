@@ -2,15 +2,9 @@ import asyncio
 import os
 from datetime import datetime, timedelta
 from typing import Union
-from pyrogram.errors import (
-    ChatAdminRequired,
-    InviteRequestSent,
-    UserAlreadyParticipant,
-    UserNotParticipant,
-)
-from pyrogram.enums import ChatMemberStatus
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+from pyrogram import Client
+from pyrogram.types import InlineKeyboardMarkup
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.exceptions import (
     AlreadyJoinedError,
@@ -43,12 +37,10 @@ from AnieXEricaMusic.utils.inline.play import stream_markup
 from AnieXEricaMusic.utils.stream.autoclear import auto_clean
 from AnieXEricaMusic.utils.thumbnails import get_thumb
 from strings import get_string
-from config import adminlist
 
 autoend = {}
 counter = {}
-AUTO_END_TIME = 2
-links = {}
+
 
 async def _clear_(chat_id):
     db[chat_id] = []
@@ -59,7 +51,7 @@ async def _clear_(chat_id):
 class Call(PyTgCalls):
     def __init__(self):
         self.userbot1 = Client(
-            name="AnieXEricaAss1",
+            name="AnieXEricaMusic1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
@@ -69,7 +61,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot2 = Client(
-            name="AnieXEricaAss2",
+            name="AnieXEricaMusic2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING2),
@@ -79,7 +71,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot3 = Client(
-            name="AnieXEricaAss3",
+            name="AnieXEricaMusic3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING3),
@@ -89,7 +81,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot4 = Client(
-            name="AnieXEricaAss4",
+            name="AnieXEricaMusic4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING4),
@@ -99,7 +91,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot5 = Client(
-            name="AnieXEricaAss5",
+            name="AnieXEricaMusic5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING5),
@@ -108,7 +100,6 @@ class Call(PyTgCalls):
             self.userbot5,
             cache_duration=100,
         )
-
 
     async def pause_stream(self, chat_id: int):
         assistant = await group_assistant(self, chat_id)
@@ -576,7 +567,6 @@ class Call(PyTgCalls):
             await self.four.start()
         if config.STRING5:
             await self.five.start()
-    
 
     async def decorators(self):
         @self.one.on_kicked()
