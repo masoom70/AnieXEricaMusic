@@ -10,9 +10,9 @@ heroku3
 motor
 pillow
 psutil
-git+https://github.com/dghfhdgbxgbg/pytgcalls097
+py-tgcalls==0.9.7
 pykeyboard
-pyrofork
+pyrogram==2.0.106
 python-dotenv
 pyyaml
 requests
@@ -22,7 +22,6 @@ tgcrypto
 unidecode
 yt-dlp==2024.8.6
 youtube-search
-youtube-search-python
 pytz
 lexica-api
 bs4
@@ -48,3 +47,6 @@ Abg==2.3.1
 pycryptodome
 pytest
 pyrogram1==0.1.0
+httpx==0.27.0
+pytube
+youtube-search-python
