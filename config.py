@@ -15,7 +15,7 @@ LOGGER_ID = int(getenv("LOGGER_ID", "-1001971806089"))
 BOTADDLOGS = int(getenv("BOTADDLOGS", "-1001971806089")) # LOGGER_ID Id Also Use No Problem
 GBAN_LOGS = int(getenv("GBAN_LOGS", "-1002046393302"))
 GCAST_USERS = list(map(int, getenv("GCAST_USERS", "2105971379 7137269276 7045191057").split()))
-OWNER_ID = int(getenv("OWNER_ID", 7137269276))
+OWNER_ID = int(getenv("OWNER_ID", 7045191057))
 OWNER = int(getenv("OWNER", 2105971379))
 OWNER_USERNAME = getenv("OWNER_USERNAME","sultan11100")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
@@ -23,7 +23,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO","https://github.com/AbhiModszYT/AnieXEricaMusic")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN",None)
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Logs_Gban")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/SuperBanSBots")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/AM_YTSUPPORT")
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", True))
 AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "5400"))
@@ -56,10 +56,10 @@ AMBOT = [
     "ᴘʀᴏᴄᴇꜱꜱɪɴɢ..",
 ]
 
-START_IMG_URL = getenv("START_IMG_URL", "https://graph.org/file/f234fa4e140eb1b85d185.jpg")
-PING_IMG_URL = getenv("PING_IMG_URL", "https://graph.org/file/f234fa4e140eb1b85d185.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/4e68b6d15e042249fb284.png")
+PING_IMG_URL = getenv("PING_IMG_URL", "https://telegra.ph/file/4e68b6d15e042249fb284.png")
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"
-STATS_IMG_URL = getenv("STATS_IMG_URL", "https://graph.org/file/f234fa4e140eb1b85d185.jpg")
+STATS_IMG_URL = getenv("STATS_IMG_URL", "https://telegra.ph/file/4e68b6d15e042249fb284.png")
 TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
 TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
 STREAM_IMG_URL = "https://te.legra.ph/file/bd995b032b6bd263e2cc9.jpg"
